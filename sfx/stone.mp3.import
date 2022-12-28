@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/stone.mp3-52d5e939cc537ea01d5fc14b7499ad1f.mp3str"
+
+[deps]
+
+source_file="res://sfx/stone.mp3"
+dest_files=[ "res://.import/stone.mp3-52d5e939cc537ea01d5fc14b7499ad1f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
