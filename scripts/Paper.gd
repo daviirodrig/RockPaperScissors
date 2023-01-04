@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
-var is_player_controlling = false
 var speed = 3
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +12,7 @@ func _ready():
 func _process(_delta):
 	var direction
 	randomize()
-	if !is_player_controlling:
+	if PlayerVariables.controlling_node != self:
 		var rand_x = rand_range(-5, 5)
 		var rand_y = rand_range(-5, 5)
 		direction = Vector2(rand_x, rand_y)
@@ -48,14 +46,23 @@ func check_collide(area):
 
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
-	var shader
+	var outline_shader = load("res://shaders/outline.shader")
+	var glow_shader = load("res://shaders/glow.shader")
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
-		if is_player_controlling:
-			is_player_controlling = false
-			shader = load("res://shaders/outline.shader")
+		if PlayerVariables.controlling_node == self:
+			load_shader_on_node(self, outline_shader)
+			PlayerVariables.controlling_node = null
+
+		elif PlayerVariables.controlling_node == null:
+			load_shader_on_node(self, glow_shader)
+			PlayerVariables.controlling_node = self
+
 		else:
-			is_player_controlling = true
-			shader = load("res://shaders/glow.shader")
-		var sprite = get_node("Area2D/Sprite")
-		sprite.material = ShaderMaterial.new()
-		sprite.material.shader = shader
+			load_shader_on_node(PlayerVariables.controlling_node, outline_shader)
+			load_shader_on_node(self, glow_shader)
+			PlayerVariables.controlling_node = self
+
+func load_shader_on_node(node: Node, shader: Shader):
+	var sprite = node.get_node("Area2D/Sprite")
+	sprite.material = ShaderMaterial.new()
+	sprite.material.shader = shader
