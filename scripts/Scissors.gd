@@ -3,6 +3,7 @@ extends KinematicBody2D
 var is_player_controlling = false
 var speed = 3
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = str(self.name)
@@ -33,19 +34,17 @@ func _process(_delta):
 	if collision:
 		check_collide(collision.collider)
 
+
 func check_collide(area):
 	if "Paper" in str(area):
-		print("[ELIM] {Paper} -> Scissors")
+		print("[ELIM] {Paper} -> " + str(self.name))
 		$ScissorSound.play()
 		area.queue_free()
 	if "Rock" in str(area):
-		print("[ELIM] Rock -> {Scissors}")
+		print("[ELIM] Rock -> " + str(self.name))
 		$RockSound.play()
 		self.queue_free()
 
-func _on_VisibilityNotifier2D_screen_exited():
-	print(str(self.name) + "deleted")
-	self.queue_free()
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
 	var shader

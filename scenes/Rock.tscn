@@ -46,7 +46,7 @@ shader_param/outline_color = null
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.5, 17 )
 
-[node name="Rock" type="KinematicBody2D"]
+[node name="Rock" type="KinematicBody2D" groups=["mob"]]
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -70,10 +70,6 @@ stream = ExtResource( 4 )
 [node name="ScissorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.499999, 1 )
-scale = Vector2( 1.75, 1.7 )
-
 [node name="Label" type="Label" parent="."]
 margin_left = -24.0
 margin_top = -32.0
@@ -88,4 +84,3 @@ position = Vector2( 0.500001, 0.999999 )
 shape = SubResource( 1 )
 
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
