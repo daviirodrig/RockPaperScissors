@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var speed = 3
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = str(self.name)
@@ -62,7 +63,10 @@ func _on_Area2D_input_event(_viewport, event, _shape_idx):
 			load_shader_on_node(self, glow_shader)
 			PlayerVariables.controlling_node = self
 
+
 func load_shader_on_node(node: Node, shader: Shader):
+	if node == null:
+		return
 	var sprite = node.get_node("Area2D/Sprite")
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = shader
