@@ -3,17 +3,17 @@
 [ext_resource path="res://scripts/Main.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 520, 8 )
+extents = Vector2( 970.017, 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 304 )
+extents = Vector2( 8, 548 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1928.0
+margin_bottom = 1088.0
 mouse_filter = 2
 color = Color( 0.54902, 0.698039, 0.509804, 1 )
 
@@ -21,24 +21,20 @@ color = Color( 0.54902, 0.698039, 0.509804, 1 )
 mode = 1
 gravity_scale = 0.0
 continuous_cd = 1
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="Botttom" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 512, 600 )
+position = Vector2( 957.983, 1080 )
 shape = SubResource( 1 )
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 0, 296 )
+position = Vector2( 0, 540 )
 shape = SubResource( 2 )
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 1024, 296 )
+position = Vector2( 1920, 540 )
 shape = SubResource( 2 )
 
 [node name="Top" type="CollisionShape2D" parent="Walls"]
-position = Vector2( 512, 0 )
+position = Vector2( 960, 0 )
 scale = Vector2( 0.99585, 1.0086 )
 shape = SubResource( 1 )

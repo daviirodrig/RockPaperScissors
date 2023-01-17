@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Mob",
+"language": "GDScript",
+"path": "res://scripts/Mob.gd"
+} ]
+_global_script_class_icons={
+"Mob": ""
+}
+
 [application]
 
 config/name="RPS"
@@ -16,7 +26,7 @@ config/icon="res://sprites/scissors.png"
 
 [autoload]
 
-PlayerVariables="*res://scripts/PlayerVariables.gd"
+Globals="*res://scripts/Globals.gd"
 
 [display]
 
