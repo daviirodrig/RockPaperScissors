@@ -81,13 +81,14 @@ func check_collide(collider: Mob):
 func play_sound(name: String):
 	var hit_audio = AudioStreamPlayer.new()
 	hit_audio.connect("finished", self, "_on_Audio_finished", [hit_audio])
-	var stream = load("res://assets/%s.mp3" % name.to_lower())
+	var stream = load("res://sfx/%s.mp3" % name.to_lower())
 	hit_audio.stream = stream
 	get_node("/root/Main").add_child(hit_audio)
 	hit_audio.play()
 
 
 func _on_Audio_finished(audio: Node2D):
+	if audio == null: return
 	audio.queue_free()
 
 
