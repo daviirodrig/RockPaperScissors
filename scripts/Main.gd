@@ -23,3 +23,7 @@ func spawn_one_mob(type, pos_w, pos_h):
 	mob.position = Vector2(pos_w, pos_h)
 
 	add_child(mob)
+
+
+func _on_Audio_finished(audio):
+	audio.queue_free()
