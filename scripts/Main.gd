@@ -12,7 +12,7 @@ func _ready():
 
 func spawn_all_mobs():
 	for type in Globals.mob_types.values():
-		for _x in range(90):
+		for _x in range(10):
 			randomize()
 			var size = get_viewport().get_visible_rect().size
 			var pos_w = randi() % int(size.x)
