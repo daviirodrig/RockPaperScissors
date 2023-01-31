@@ -6,7 +6,6 @@ var speed = 3
 
 
 func _ready():
-	#$Label.text = "%s" % type
 	set_sprite()
 
 
@@ -43,7 +42,8 @@ func check_inputs():
 
 
 func check_collide(collider: Mob):
-	if collider == null: return
+	if collider == null:
+		return
 	if self.type == Globals.mob_types.SCISSORS:
 		if collider.type == Globals.mob_types.PAPER:
 			print("[ELIM] {Paper} -> " + str(self.name))
@@ -88,12 +88,14 @@ func play_sound(name: String):
 
 
 func _on_Audio_finished(audio: Node2D):
-	if audio == null: return
+	if audio == null:
+		return
 	audio.queue_free()
 
 
 func _physics_process(_delta):
 	check_inputs()
+
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
 	var outline_shader = load("res://shaders/outline.shader")
