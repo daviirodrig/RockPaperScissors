@@ -94,3 +94,28 @@ func _on_Audio_finished(audio: Node2D):
 
 func _physics_process(_delta):
 	check_inputs()
+
+func _on_Area2D_input_event(_viewport, event, _shape_idx):
+	var outline_shader = load("res://shaders/outline.shader")
+	var glow_shader = load("res://shaders/glow.shader")
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
+		if Globals.controlling_node == self:
+			load_shader_on_node(self, outline_shader)
+			Globals.controlling_node = null
+
+		elif Globals.controlling_node == null:
+			load_shader_on_node(self, glow_shader)
+			Globals.controlling_node = self
+
+		else:
+			load_shader_on_node(Globals.controlling_node, outline_shader)
+			load_shader_on_node(self, glow_shader)
+			Globals.controlling_node = self
+
+
+func load_shader_on_node(node: Node, shader: Shader):
+	if node == null:
+		return
+	var sprite = node.get_node("Area2D/Sprite")
+	sprite.material = ShaderMaterial.new()
+	sprite.material.shader = shader
