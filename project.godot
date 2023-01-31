@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="RPS"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://sprites/scissors.png"
+config/icon="res://assets/sprites/scissors.png"
 
 [autoload]
 

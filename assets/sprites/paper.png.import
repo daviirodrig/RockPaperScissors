@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scissors.png-74224f9996ce64970f9ae995daa00e80.stex"
+path="res://.import/paper.png-fa274aa5bc3ea0c78e67a60f352e0838.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scissors.png"
-dest_files=[ "res://.import/scissors.png-74224f9996ce64970f9ae995daa00e80.stex" ]
+source_file="res://assets/sprites/paper.png"
+dest_files=[ "res://.import/paper.png-fa274aa5bc3ea0c78e67a60f352e0838.stex" ]
 
 [params]
 
