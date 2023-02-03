@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Mob
 
 var type: int
-var speed = 3
+var speed = 10
 
 
 func _ready():
@@ -19,24 +19,16 @@ func set_sprite():
 func check_inputs():
 	var direction
 	if Globals.controlling_node == self:
-		direction = Vector2.ZERO
-		if Input.is_action_pressed("move_right"):
-			direction.x += 1
-		if Input.is_action_pressed("move_left"):
-			direction.x -= 1
-		if Input.is_action_pressed("move_down"):
-			direction.y += 1
-		if Input.is_action_pressed("move_up"):
-			direction.y -= 1
-
-		if direction.length() > 0:
-			direction = direction.normalized() * speed
+		direction = Vector2(
+			int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")),
+			int(Input.is_action_pressed("move_down"))  - int(Input.is_action_pressed("move_up"))
+		).normalized()
 	else:
 		randomize()
-		var rand_x = rand_range(-5, 5)
-		var rand_y = rand_range(-5, 5)
+		var rand_x = rand_range(-1, 1)
+		var rand_y = rand_range(-1, 1)
 		direction = Vector2(rand_x, rand_y)
-	var collision = move_and_collide(direction)
+	var collision = move_and_collide(direction * speed)
 	if collision:
 		check_collide(collision.collider)
 
