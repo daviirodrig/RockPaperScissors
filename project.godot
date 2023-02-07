@@ -27,6 +27,7 @@ config/icon="res://assets/sprites/scissors.png"
 [autoload]
 
 Globals="*res://scripts/Globals.gd"
+SignalManager="*res://scripts/SignalManager.gd"
 
 [display]
 

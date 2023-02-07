@@ -41,7 +41,7 @@ func collided_with_bolt(bolt):
 	var timer = Timer.new()
 	timer.wait_time = 5
 	timer.one_shot = true
-	timer.connect("timeout", get_node("/root/Main"), "_on_Bolt_timeout", [self, timer])
+	timer.connect("timeout", get_node("/root/SignalManager"), "_on_Bolt_timeout", [self, timer])
 	timer.autostart = true
 	get_node("/root/Main").add_child(timer)
 
@@ -84,7 +84,7 @@ func check_collide(collider: Mob):
 
 func play_sound(name: String):
 	var hit_audio = AudioStreamPlayer.new()
-	hit_audio.connect("finished", get_node("/root/Main"), "_on_Audio_finished", [hit_audio])
+	hit_audio.connect("finished", get_node("/root/SignalManager"), "_on_Audio_finished", [hit_audio])
 	var stream = load("res://assets/sfx/%s.mp3" % name.to_lower())
 	hit_audio.stream = stream
 	get_node("/root/Main").add_child(hit_audio)
