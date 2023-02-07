@@ -1,10 +1,12 @@
 extends Node2D
 
 var win_scene = preload("res://scenes/Win.tscn")
+var bolt_scene = preload("res://scenes/Bolt.tscn")
 var won = false
 
 func _ready():
 	spawn_all_mobs()
+	spawn_speed_powerup()
 
 func _process(delta):
 	check_winner()
@@ -43,7 +45,6 @@ func spawn_all_mobs():
 			var pos_h = randi() % int(size.y)
 			spawn_one_mob(type, pos_w, pos_h)
 
-
 func spawn_one_mob(type, pos_w, pos_h):
 	var scene = load("res://scenes/Mob.tscn")
 	var mob = scene.instance()
@@ -53,6 +54,20 @@ func spawn_one_mob(type, pos_w, pos_h):
 
 	add_child(mob)
 
+
+func spawn_speed_powerup():
+	randomize()
+	var bolt: StaticBody2D = bolt_scene.instance()
+	var viewport_size = get_viewport().get_visible_rect().size
+	var location = Vector2(randi() % int(viewport_size.x), randi() % int(viewport_size.y))
+	bolt.position = location
+	add_child(bolt)
+
+
+func _on_Bolt_timeout(mob, timer):
+	if is_instance_valid(mob):
+		mob.speed = 10
+	timer.queue_free()
 
 func _on_Audio_finished(audio):
 	audio.queue_free()

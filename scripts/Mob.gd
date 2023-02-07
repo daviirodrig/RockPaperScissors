@@ -30,8 +30,20 @@ func check_inputs():
 		direction = Vector2(rand_x, rand_y)
 	var collision = move_and_collide(direction * speed)
 	if collision:
+		if "Bolt" in collision.collider.name:
+			collided_with_bolt(collision.collider)
 		check_collide(collision.collider)
 
+
+func collided_with_bolt(bolt):
+	bolt.free()
+	self.speed = 15
+	var timer = Timer.new()
+	timer.wait_time = 5
+	timer.one_shot = true
+	timer.connect("timeout", get_node("/root/Main"), "_on_Bolt_timeout", [self, timer])
+	timer.autostart = true
+	get_node("/root/Main").add_child(timer)
 
 func check_collide(collider: Mob):
 	if collider == null:
