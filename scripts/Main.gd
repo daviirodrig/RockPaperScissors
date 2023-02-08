@@ -57,7 +57,7 @@ func spawn_one_mob(type, pos_w, pos_h):
 
 func spawn_speed_powerup():
 	randomize()
-	var bolt: StaticBody2D = bolt_scene.instance()
+	var bolt: Area2D = bolt_scene.instance()
 	var viewport_size = get_viewport().get_visible_rect().size
 	var location = Vector2(randi() % int(viewport_size.x), randi() % int(viewport_size.y))
 	bolt.position = location
