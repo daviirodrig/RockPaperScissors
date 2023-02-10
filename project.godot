@@ -9,13 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "CommandData",
+"language": "GDScript",
+"path": "res://addons/gift/util/cmd_data.gd"
+}, {
+"base": "Reference",
+"class": "CommandInfo",
+"language": "GDScript",
+"path": "res://addons/gift/util/cmd_info.gd"
+}, {
+"base": "Node",
+"class": "Gift",
+"language": "GDScript",
+"path": "res://addons/gift/gift_node.gd"
+}, {
+"base": "Resource",
+"class": "ImageCache",
+"language": "GDScript",
+"path": "res://addons/gift/util/image_cache.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Mob",
 "language": "GDScript",
 "path": "res://scripts/Mob.gd"
+}, {
+"base": "Reference",
+"class": "SenderData",
+"language": "GDScript",
+"path": "res://addons/gift/util/sender_data.gd"
 } ]
 _global_script_class_icons={
-"Mob": ""
+"CommandData": "",
+"CommandInfo": "",
+"Gift": "",
+"ImageCache": "",
+"Mob": "",
+"SenderData": ""
 }
 
 [application]
