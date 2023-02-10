@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/ComicMono.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://themes/default.tres" type="Theme" id=3]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=17]
 size = 90
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
@@ -148,6 +149,7 @@ tracks/4/keys = {
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -165,7 +167,7 @@ margin_left = -200.0
 margin_top = -380.0
 margin_right = 200.0
 margin_bottom = -180.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 17 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
 custom_styles/focus = SubResource( 11 )
