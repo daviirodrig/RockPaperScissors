@@ -1,0 +1,6 @@
+	# TODO Set shader to glowing DONE
+	# TODO Auto spawn boost after time
+	# TODO Make bolt a powerup generic class
+	# TODO Settings page
+	# TODO New architecutre folder
+	# TODO complete default theme

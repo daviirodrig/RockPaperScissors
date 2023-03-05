@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/sprites/bolt.png" type="Texture" id=1]
-[ext_resource path="res://assets/shaders/glow.shader" type="Shader" id=2]
+[ext_resource path="res://assets/sprites/bolt.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/shaders/glow.gdshader" type="Shader" id=2]
 [ext_resource path="res://scripts/Bolt.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -11,12 +11,12 @@ shader_param/tint = Color( 1, 1, 0, 1 )
 shader_param/span = 0.3
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 56 )
+size = Vector2( 32, 56 )
 
 [node name="Bolt" type="Area2D" groups=["powerups"]]
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

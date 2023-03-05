@@ -2,12 +2,12 @@ extends Control
 
 
 func _ready():
-	$Subtitle/AnimationPlayer.play("New Anim")
+	$CenterContainer/Subtitle/AnimationPlayer.play("New Anim")
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 
 
 func _on_TwitchButton_pressed():
-	get_tree().change_scene("res://scenes/TwitchSettings.tscn")
+	get_tree().change_scene_to_file("res://scenes/TwitchSettings.tscn")

@@ -1,229 +1,157 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://b2rsybe7lprl1"]
 
-[ext_resource path="res://assets/fonts/ComicMono.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
-[ext_resource path="res://themes/default.tres" type="Theme" id=3]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="2"]
+[ext_resource type="Theme" path="res://themes/default.tres" id="3"]
 
-[sub_resource type="DynamicFont" id=17]
-size = 90
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.392157, 0.823529, 0.894118, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.25098, 0.533333, 0.576471, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0, 0.858824, 1, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="DynamicFont" id=2]
-size = 65
-outline_size = 6
-outline_color = Color( 0.0156863, 0.00392157, 0.0117647, 1 )
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=16]
-default_font = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 80
-outline_size = 6
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 resource_name = "New Anim"
 length = 2.0
-loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 910, 55 ) ]
+"values": [Vector2(910, 55)]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:rect_rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.382267 ]
+"values": [0.382267]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath(".:rect_size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 573, 171 ) ]
+"values": [Vector2(573, 171)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath(".:custom_fonts/font:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 80 ]
+"values": [80]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ttlr"]
+_data = {
+"New Anim": SubResource("5"),
+"RESET": SubResource("6")
 }
 
 [node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 3 )
-script = ExtResource( 2 )
+theme = ExtResource("3")
+script = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
-color = Color( 0.54902, 0.698039, 0.509804, 1 )
+color = Color(0.54902, 0.698039, 0.509804, 1)
 
 [node name="StartButton" type="Button" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -200.0
-margin_top = -380.0
-margin_right = 200.0
-margin_bottom = -180.0
-custom_fonts/font = SubResource( 17 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
+offset_left = -200.0
+offset_top = -380.0
+offset_right = 200.0
+offset_bottom = -180.0
 text = "Start"
 
 [node name="Title" type="Label" parent="."]
-anchor_right = 1.0
-margin_bottom = 128.0
-theme = SubResource( 16 )
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -332.5
+offset_top = 10.0
+offset_right = 332.5
+offset_bottom = 83.0
 text = "Rock Paper Scissors"
-align = 1
-valign = 1
-
-[node name="Subtitle" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -1248.0
-margin_top = -428.0
-margin_right = -675.0
-margin_bottom = -257.0
-rect_pivot_offset = Vector2( 286, 81 )
-custom_colors/font_color = Color( 1, 0.992157, 0, 1 )
-custom_fonts/font = SubResource( 4 )
-text = "Battle Royale"
-align = 1
-valign = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Subtitle"]
-reset_on_save = false
-"anims/New Anim" = SubResource( 5 )
-anims/RESET = SubResource( 6 )
 
 [node name="TwitchButton" type="Button" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -539.0
-margin_top = -200.0
-margin_bottom = -8.0
-custom_colors/font_color_disabled = Color( 0.568627, 0.27451, 1, 1 )
-custom_colors/font_color_focus = Color( 0.568627, 0.27451, 1, 1 )
-custom_colors/font_color = Color( 0.568627, 0.27451, 1, 1 )
-custom_colors/font_color_hover = Color( 0.568627, 0.27451, 1, 1 )
-custom_colors/font_color_pressed = Color( 0.568627, 0.27451, 1, 1 )
-custom_fonts/font = SubResource( 17 )
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 12 )
-custom_styles/normal = SubResource( 13 )
+offset_left = -539.0
+offset_top = -200.0
+offset_bottom = -8.0
 text = "Twitch Mode"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 290.0
+
+[node name="Subtitle" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 200)
+layout_mode = 2
+text = "Battle Royale"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/Subtitle"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_2ttlr")
+}
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="TwitchButton" to="." method="_on_TwitchButton_pressed"]

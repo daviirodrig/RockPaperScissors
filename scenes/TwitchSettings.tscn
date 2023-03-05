@@ -1,23 +1,23 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://themes/default.tres" type="Theme" id=1]
-[ext_resource path="res://assets/fonts/ComicMono.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/ComicMono.ttf" type="FontFile" id=2]
 [ext_resource path="res://scripts/TwitchSettings.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 90
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 50
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
-extra_spacing_top = 60
-extra_spacing_bottom = 60
+spacing_top = 60
+spacing_bottom = 60
 font_data = ExtResource( 2 )
 
 [node name="TwitchSettings" type="Control"]
@@ -34,31 +34,44 @@ color = Color( 0.54902, 0.698039, 0.509804, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
-margin_bottom = 111.0
+anchor_bottom = 1.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 521.0
-margin_right = 1398.0
-margin_bottom = 176.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+offset_left = 661.0
+offset_top = 204.0
+offset_right = 1259.0
+offset_bottom = 875.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 90
 alignment = 1
 
-[node name="ChannelText" type="LineEdit" parent="CenterContainer/HBoxContainer"]
-margin_right = 598.0
-margin_bottom = 176.0
+[node name="ChannelText" type="LineEdit" parent="CenterContainer/VBoxContainer"]
+offset_right = 598.0
+offset_bottom = 111.0
 custom_fonts/font = SubResource( 1 )
 align = 1
 context_menu_enabled = false
 placeholder_text = "Channel name"
 caret_blink = true
 
-[node name="ConnectButton" type="Button" parent="CenterContainer/HBoxContainer"]
-margin_left = 688.0
-margin_right = 877.0
-margin_bottom = 176.0
+[node name="ConnectButton" type="Button" parent="CenterContainer/VBoxContainer"]
+offset_top = 201.0
+offset_right = 598.0
+offset_bottom = 377.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_minimum_size = Vector2( 200, 100 )
 custom_fonts/font = SubResource( 2 )
 text = "Connect"
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/ConnectButton" to="." method="_on_ConnectButton_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+offset_top = 467.0
+offset_right = 598.0
+offset_bottom = 671.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "X users loaded"
+fit_content_height = true
+scroll_active = false
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ConnectButton" to="." method="_on_ConnectButton_pressed"]

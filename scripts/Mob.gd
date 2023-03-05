@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name Mob
 
 var type: int
@@ -10,7 +10,7 @@ func _ready():
 
 
 func set_sprite():
-	var sprite = get_node("Area2D/Sprite")
+	var sprite = get_node("Area2D/Sprite2D")
 	var keys = Globals.mob_types.keys()
 	var texture = load("res://assets/sprites/%s.png" % keys[type].to_lower())
 	sprite.texture = texture
@@ -25,8 +25,8 @@ func check_inputs():
 		).normalized()
 	else:
 		randomize()
-		var rand_x = rand_range(-1, 1)
-		var rand_y = rand_range(-1, 1)
+		var rand_x = randf_range(-1, 1)
+		var rand_y = randf_range(-1, 1)
 		direction = Vector2(rand_x, rand_y)
 	var collision = move_and_collide(direction * speed)
 	if collision:
@@ -86,8 +86,8 @@ func _physics_process(_delta):
 
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
-	var outline_shader = load("res://assets/shaders/outline.shader")
-	var glow_shader = load("res://assets/shaders/glow.shader")
+	var outline_shader = load("res://assets/shaders/outline.gdshader")
+	var glow_shader = load("res://assets/shaders/glow.gdshader")
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
 		if Globals.controlling_node == self:
 			load_shader_on_node(self, outline_shader)
@@ -106,6 +106,6 @@ func _on_Area2D_input_event(_viewport, event, _shape_idx):
 func load_shader_on_node(node: Node, shader: Shader):
 	if node == null:
 		return
-	var sprite = node.get_node("Area2D/Sprite")
+	var sprite = node.get_node("Area2D/Sprite2D")
 	sprite.material = ShaderMaterial.new()
-	sprite.material.shader = shader
+	sprite.material.gdshader = shader
