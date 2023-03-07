@@ -6,6 +6,7 @@ var speed = 10
 
 
 func _ready():
+	$Nickname.text = self.name
 	set_sprite()
 
 
@@ -19,10 +20,8 @@ func set_sprite():
 func check_inputs():
 	var direction
 	if Globals.controlling_node == self:
-		direction = Vector2(
-			int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")),
-			int(Input.is_action_pressed("move_down"))  - int(Input.is_action_pressed("move_up"))
-		).normalized()
+		direction = Vector2(int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))).normalized()
+
 	else:
 		randomize()
 		var rand_x = randf_range(-1, 1)
@@ -30,12 +29,13 @@ func check_inputs():
 		direction = Vector2(rand_x, rand_y)
 	var collision = move_and_collide(direction * speed)
 	if collision:
-		check_collide(collision.collider)
+		check_collide(collision.get_collider())
 
 
-func check_collide(collider: Mob):
-	if collider == null:
+func check_collide(collider):
+	if !("Mob" in collider.name):
 		return
+
 	if self.type == Globals.mob_types.SCISSORS:
 		if collider.type == Globals.mob_types.PAPER:
 			print("[ELIM] {Paper} -> " + str(self.name))
@@ -73,7 +73,7 @@ func check_collide(collider: Mob):
 func play_sound(name: String):
 	var hit_audio = AudioStreamPlayer.new()
 	hit_audio.connect(
-		"finished", get_node("/root/SignalManager"), "_on_Audio_finished", [hit_audio]
+		"finished", Callable(get_node("/root/SignalManager"), "_on_Audio_finished").bind(hit_audio)
 	)
 	var stream = load("res://assets/sfx/%s.mp3" % name.to_lower())
 	hit_audio.stream = stream
@@ -108,4 +108,4 @@ func load_shader_on_node(node: Node, shader: Shader):
 		return
 	var sprite = node.get_node("Area2D/Sprite2D")
 	sprite.material = ShaderMaterial.new()
-	sprite.material.gdshader = shader
+	sprite.material.shader = shader

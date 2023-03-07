@@ -13,6 +13,24 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/70/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/70/0 = Vector2(0, 0)
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/70/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/70/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/70/0/kerning_overrides/70/0 = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="2"]
 
@@ -62,10 +80,28 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/70/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/70/0 = Vector2(0, 0)
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/70/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/70/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/70/0/kerning_overrides/70/0 = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="9"]
 
-[sub_resource type="Image" id="Image_6urcj"]
+[sub_resource type="Image" id="Image_6x7b8"]
 data = {
 "data": PackedByteArray(23, 22, 26, 111, 29, 28, 33, 239, 32, 30, 36, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 32, 30, 36, 247, 29, 28, 33, 239, 23, 22, 26, 111, 29, 28, 33, 240, 36, 34, 41, 255, 40, 38, 45, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 45, 255, 36, 34, 41, 255, 29, 28, 33, 240, 32, 30, 36, 249, 40, 38, 45, 255, 43, 42, 49, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 43, 42, 49, 255, 40, 38, 45, 255, 32, 30, 36, 249, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 32, 30, 36, 249, 40, 38, 45, 255, 43, 42, 49, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 43, 42, 49, 255, 40, 38, 45, 255, 32, 30, 36, 249, 29, 28, 33, 240, 36, 34, 41, 255, 40, 38, 45, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 45, 255, 36, 34, 41, 255, 29, 28, 33, 241, 23, 22, 26, 111, 29, 28, 33, 240, 32, 30, 36, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 32, 30, 36, 247, 29, 28, 33, 238, 23, 22, 26, 111),
 "format": "RGBA8",
@@ -75,14 +111,15 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="11"]
-image = SubResource("Image_6urcj")
+image = SubResource("Image_6x7b8")
 
 [sub_resource type="StyleBoxTexture" id="12"]
 texture = SubResource("11")
 region_rect = Rect2(0, 0, 10, 10)
 
 [resource]
-default_font = SubResource("8")
+default_font = ExtResource("1")
+default_font_size = 70
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_color_disabled = Color(0.9, 0.9, 0.9, 0.2)
 Button/colors/font_color_focus = Color(0.94, 0.94, 0.94, 1)

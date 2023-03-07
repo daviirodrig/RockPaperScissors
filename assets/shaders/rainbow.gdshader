@@ -3,8 +3,6 @@
 
 shader_type canvas_item;
 
-const float PI = 3.1415926535;
-
 uniform float strength: hint_range(0., 1.) = 0.5;
 uniform float speed: hint_range(0., 10.) = 0.5;
 uniform float angle: hint_range(0., 360.) = 0.;

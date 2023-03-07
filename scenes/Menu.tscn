@@ -1,11 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2rsybe7lprl1"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="2"]
-[ext_resource type="Theme" path="res://themes/default.tres" id="3"]
+[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://themes/default.tres" id="3"]
 
 [sub_resource type="Animation" id="5"]
 resource_name = "New Anim"
 length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,25 +14,10 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(0.5, 0.5)]
-}
-
-[sub_resource type="Animation" id="6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -40,46 +26,73 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(713, 110), Vector2(600, 110)]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(910, 55)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.382267]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
+tracks/2/path = NodePath(".:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.382267]
+"values": [Vector2(573, 171)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath(".:size")
+tracks/3/path = NodePath(".:custom_fonts/font:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(573, 171)]
+"values": [80]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:custom_fonts/font:size")
+tracks/4/path = NodePath(".:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [80]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ttlr"]
@@ -93,37 +106,54 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3")
 script = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 color = Color(0.54902, 0.698039, 0.509804, 1)
 
 [node name="StartButton" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -380.0
+offset_top = -50.0
 offset_right = 200.0
-offset_bottom = -180.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 text = "Start"
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -332.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.311979
+anchor_right = 0.688021
+anchor_bottom = 0.0759259
 offset_top = 10.0
-offset_right = 332.5
-offset_bottom = 83.0
+offset_bottom = 10.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
 text = "Rock Paper Scissors"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TwitchButton" type="Button" parent="."]
 layout_mode = 0
@@ -136,18 +166,26 @@ offset_top = -200.0
 offset_bottom = -8.0
 text = "Twitch Mode"
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-anchor_right = 1.0
-offset_top = 90.0
-offset_bottom = 290.0
-
-[node name="Subtitle" type="Label" parent="CenterContainer"]
-custom_minimum_size = Vector2(720, 200)
-layout_mode = 2
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.505146
+anchor_right = 0.505146
+offset_left = -369.88
+offset_top = 110.0
+offset_right = 124.12
+offset_bottom = 192.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
 text = "Battle Royale"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer/Subtitle"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Subtitle"]
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_2ttlr")

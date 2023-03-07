@@ -4,15 +4,19 @@ var win_scene = preload("res://scenes/Win.tscn")
 var bolt_scene = preload("res://scenes/Bolt.tscn")
 var won = false
 
+
 func _ready():
 	spawn_all_mobs()
 	spawn_speed_powerup()
 
+
 func _process(delta):
 	check_winner()
 
+
 func check_winner():
-	if won: return
+	if won:
+		return
 	var mobs = get_tree().get_nodes_in_group("mobs")
 	var types = []
 	for mob in mobs:
@@ -24,8 +28,9 @@ func check_winner():
 		add_sibling($ColorRect, win)
 		won = true
 
-func is_every_element_same(lst) -> bool:
-	if not lst:  # empty list
+
+func is_every_element_same(lst: Array) -> bool:
+	if lst.is_empty():  # empty list
 		return false
 
 	var first_element = lst[0]
@@ -44,6 +49,7 @@ func spawn_all_mobs():
 			var pos_w = randi() % int(size.x)
 			var pos_h = randi() % int(size.y)
 			spawn_one_mob(type, pos_w, pos_h)
+
 
 func spawn_one_mob(type, pos_w, pos_h):
 	var scene = load("res://scenes/Mob.tscn")
