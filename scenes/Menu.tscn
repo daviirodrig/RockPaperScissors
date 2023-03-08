@@ -1,7 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2rsybe7lprl1"]
+[gd_scene load_steps=9 format=3 uid="uid://b2rsybe7lprl1"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="2"]
 [ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://themes/default.tres" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u28u"]
+bg_color = Color(0.568627, 0.27451, 1, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n34ob"]
+bg_color = Color(0.580392, 0.345098, 0.929412, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se0ae"]
+bg_color = Color(0.552941, 0.184314, 1, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="Animation" id="5"]
 resource_name = "New Anim"
@@ -164,6 +197,11 @@ anchor_bottom = 1.0
 offset_left = -539.0
 offset_top = -200.0
 offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u28u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n34ob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_se0ae")
 text = "Twitch Mode"
 
 [node name="Subtitle" type="Label" parent="."]
@@ -171,12 +209,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.505146
 anchor_right = 0.505146
-offset_left = -369.88
+offset_left = -341.403
 offset_top = 110.0
-offset_right = 124.12
+offset_right = 152.604
 offset_bottom = 192.0
 grow_horizontal = 2
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.37399, 1.37399)
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
