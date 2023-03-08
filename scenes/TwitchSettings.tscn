@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhn5fl6oiwyuf"]
+[gd_scene load_steps=5 format=3 uid="uid://bhn5fl6oiwyuf"]
 
 [ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://themes/default.tres" id="1"]
 [ext_resource type="Script" path="res://scripts/TwitchSettings.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://20x6c7drcw5d" path="res://assets/sprites/left.png" id="3_2aue1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8flof"]
+bg_color = Color(0, 0.858824, 1, 1)
 
 [node name="TwitchSettings" type="Control"]
 layout_mode = 3
@@ -52,4 +56,16 @@ layout_mode = 2
 text = "X users loaded"
 scroll_active = false
 
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8flof")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8flof")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8flof")
+text = "Back"
+icon = ExtResource("3_2aue1")
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ConnectButton" to="." method="_on_ConnectButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
