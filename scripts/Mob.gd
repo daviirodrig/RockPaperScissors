@@ -70,12 +70,12 @@ func check_collide(collider):
 			collider.queue_free()
 
 
-func play_sound(name: String):
+func play_sound(sound_name: String):
 	var hit_audio = AudioStreamPlayer.new()
 	hit_audio.connect(
 		"finished", Callable(get_node("/root/SignalManager"), "_on_Audio_finished").bind(hit_audio)
 	)
-	var stream = load("res://assets/sfx/%s.mp3" % name.to_lower())
+	var stream = load("res://assets/sfx/%s.mp3" % sound_name.to_lower())
 	hit_audio.stream = stream
 	get_node("/root/Main").add_child(hit_audio)
 	hit_audio.play()

@@ -10,7 +10,7 @@ func _ready():
 	spawn_speed_powerup()
 
 
-func _process(delta):
+func _process(_delta):
 	check_winner()
 
 
@@ -30,7 +30,7 @@ func check_winner():
 
 
 func is_every_element_same(lst: Array) -> bool:
-	if lst.is_empty():  # empty list
+	if lst.is_empty():
 		return false
 
 	var first_element = lst[0]

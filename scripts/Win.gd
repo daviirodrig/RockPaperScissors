@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func _ready():
 	$Winner/AnimationPlayer.play("New Anim")
 
