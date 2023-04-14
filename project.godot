@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="RPS"
-run/main_scene="res://scenes/Menu.tscn"
+run/main_scene="res://src/menu/Menu.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://assets/sprites/scissors.png"
 
 [autoload]
 
-Globals="*res://scripts/Globals.gd"
-SignalManager="*res://scripts/SignalManager.gd"
+Globals="*res://src/global/Globals.gd"
+SignalManager="*res://src/global/SignalManager.gd"
 
 [display]
 

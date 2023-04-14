@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2rsybe7lprl1"]
+[gd_scene load_steps=9 format=3 uid="uid://b5pptxkw3l2k2"]
 
-[ext_resource type="Script" path="res://scripts/Menu.gd" id="2"]
-[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://themes/default.tres" id="3"]
+[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://assets/themes/default.tres" id="1_dcnuw"]
+[ext_resource type="Script" path="res://src/menu/Menu.gd" id="2_l2bhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u28u"]
 bg_color = Color(0.568627, 0.27451, 1, 1)
@@ -141,8 +141,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3")
-script = ExtResource("2")
+theme = ExtResource("1_dcnuw")
+script = ExtResource("2_l2bhd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -167,7 +167,7 @@ offset_right = 200.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3")
+theme = ExtResource("1_dcnuw")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 text = "Start"

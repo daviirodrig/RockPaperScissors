@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddvjqel315n6r"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Texture2D" uid="uid://dckdpp3n34ban" path="res://assets/sprites/bolt.png" id="1"]
 [ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="2"]
-[ext_resource type="Script" path="res://scripts/Bolt.gd" id="3"]
+[ext_resource type="Script" path="res://src/powerups/bolt/Bolt.gd" id="3"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("2")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds0lieyplh5dt"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://scripts/Mob.gd" id="1"]
+[ext_resource type="Script" path="res://src/mob/Mob.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b18qrg87wg86b" path="res://assets/sprites/paper.png" id="2"]
-[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://themes/default.tres" id="3"]
+[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://assets/themes/default.tres" id="3"]
 
 [sub_resource type="Shader" id="4"]
 code = "shader_type canvas_item;

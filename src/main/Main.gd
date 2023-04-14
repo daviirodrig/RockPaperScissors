@@ -1,7 +1,7 @@
 extends Node2D
 
-var win_scene = preload("res://scenes/Win.tscn")
-var bolt_scene = preload("res://scenes/Bolt.tscn")
+var win_scene = preload("res://src/main/win/Win.tscn")
+var bolt_scene = preload("res://src/powerups/bolt/Bolt.tscn")
 var won = false
 
 
@@ -52,7 +52,7 @@ func spawn_all_mobs():
 
 
 func spawn_one_mob(type, pos_w, pos_h):
-	var scene = load("res://scenes/Mob.tscn")
+	var scene = load("res://src/mob/Mob.tscn")
 	var mob = scene.instantiate()
 
 	mob.type = type

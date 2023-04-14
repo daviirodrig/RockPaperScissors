@@ -1,6 +1,6 @@
 extends Control
 
-var twitch = preload("res://scripts/Twitch.gd")
+var twitch = preload("res://src/twitch/Twitch.gd")
 
 
 func _on_ConnectButton_pressed():
@@ -15,4 +15,4 @@ func _on_ConnectButton_pressed():
 	get_node("/root/").add_child(t)
 
 func _on_BackButton_pressed():
-	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+	get_tree().change_scene_to_file("res://src/menu/Menu.tscn")
