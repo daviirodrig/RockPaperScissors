@@ -2,12 +2,14 @@ extends Node2D
 
 var win_scene = preload("res://src/main/win/Win.tscn")
 var bolt_scene = preload("res://src/powerups/bolt/Bolt.tscn")
+var ice_scene = preload("res://src/powerups/ice/Ice.tscn")
 var won = false
 
 
 func _ready():
 	spawn_all_mobs()
-	spawn_speed_powerup()
+	spawn_powerup(bolt_scene)
+	spawn_powerup(ice_scene)
 
 
 func _process(_delta):
@@ -61,10 +63,10 @@ func spawn_one_mob(type, pos_w, pos_h):
 	add_child(mob)
 
 
-func spawn_speed_powerup():
+func spawn_powerup(powerup_scene: PackedScene):
 	randomize()
-	var bolt: Area2D = bolt_scene.instantiate()
+	var powerup: Area2D = powerup_scene.instantiate()
 	var viewport_size = get_viewport().get_visible_rect().size
 	var location = Vector2(randi() % int(viewport_size.x), randi() % int(viewport_size.y))
-	bolt.position = location
-	add_child(bolt)
+	powerup.position = location
+	add_child(powerup)
