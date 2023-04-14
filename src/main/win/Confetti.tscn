@@ -1,31 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://xmkb5llg4383"]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id="Gradient_lu0ho"]
 interpolation_mode = 2
-offsets = PackedFloat32Array( 0, 0.131579, 0.201754, 0.27193, 0.403509, 0.508772, 0.570175, 0.657895, 0.815789, 0.921053, 0.991228 )
-colors = PackedColorArray( 1, 0, 0, 1, 0.274658, 0.312424, 0.878906, 1, 0.984375, 0.645996, 0, 1, 0.161154, 0.71842, 0.705359, 1, 0.964844, 0.422119, 0.816442, 1, 0.532152, 0.871094, 0.360687, 1, 0.0134583, 0.492188, 0.379985, 1, 0.464844, 0.0326843, 0.377061, 1, 0.949219, 0.683728, 0.226181, 1, 0.371414, 0.941406, 0.754378, 1, 0.331893, 0.231094, 0.910156, 1 )
+offsets = PackedFloat32Array(0, 0.132, 0.202, 0.272, 0.404, 0.509, 0.57, 0.658, 0.816, 0.921, 0.991)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0.690196, 1, 0, 0.792157, 0, 1, 0.807843, 0.858824, 0, 1, 0.858824, 0.866667, 0.52549, 1, 0, 0.482353, 0.509804, 1, 0, 0.858824, 0.223529, 1, 0.831373, 0.333333, 0, 1, 0.431373, 0, 0.886275, 1)
 
-[sub_resource type="GradientTexture2D" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sjrrb"]
+gradient = SubResource("Gradient_lu0ho")
 
-[sub_resource type="ParticleProcessMaterial" id=1]
-emission_shape = 5
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m5p16"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
 emission_ring_radius = 1000.0
 emission_ring_inner_radius = 5.0
-emission_ring_height = 0.0
-emission_ring_axis = Vector3( 0, 0, 1 )
-gravity = Vector3( 0, 98, 0 )
-scale = 10.0
-scale_random = 1.0
-color_ramp = SubResource( 3 )
-hue_variation = 0.27
-hue_variation_random = 0.71
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 10.0
+color_ramp = SubResource("GradientTexture1D_sjrrb")
 
 [node name="Confetti" type="GPUParticles2D"]
-position = Vector2( 912, 48 )
-amount = 300
+position = Vector2(912, 48)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_m5p16")
 lifetime = 4.0
 speed_scale = 3.0
 explosiveness = 0.57
-visibility_rect = Rect2( -100, -100, 1000, 1000 )
-process_material = SubResource( 1 )
+visibility_rect = Rect2(-100, -100, 1000, 1000)

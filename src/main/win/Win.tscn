@@ -1,157 +1,103 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bcsqm34f2ewh6"]
 
-[ext_resource type="PackedScene" path="res://src/main/win/Confetti.tscn" id="1"]
-[ext_resource type="FontFile" uid="uid://c1mof285k20nv" path="res://assets/fonts/ComicMono.ttf" id="2"]
+[ext_resource type="PackedScene" uid="uid://xmkb5llg4383" path="res://src/main/win/Confetti.tscn" id="1"]
 [ext_resource type="Script" path="res://src/main/win/Win.gd" id="3"]
+[ext_resource type="Theme" uid="uid://dr61761orgi5f" path="res://assets/themes/default.tres" id="3_l4u3i"]
 
-[sub_resource type="FontFile" id=4]
-size = 90
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.392157, 0.823529, 0.894118, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.25098, 0.533333, 0.576471, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0.858824, 1, 1 )
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-expand_margin_left = 5.0
-expand_margin_right = 5.0
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="FontFile" id=1]
-size = 80
-outline_size = 6
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "New Anim"
 length = 2.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1, 2 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 910, 55 ) ]
+"values": [Vector2(910, 55)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 0.382267 ]
+"values": [0.382267]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath(".:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 573, 171 ) ]
+"values": [Vector2(573, 171)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath(".:custom_fonts/font:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ 80 ]
+"values": [80]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ehw5k"]
+_data = {
+"New Anim": SubResource("2"),
+"RESET": SubResource("3")
 }
 
 [node name="Win" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="Confetti" parent="." instance=ExtResource( 1 )]
-position = Vector2( 544, 184 )
-
-[node name="Confetti2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1184, 184 )
-
-[node name="Confetti3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1704, 200 )
-
-[node name="Confetti4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 192 )
+[node name="Confetti" parent="." instance=ExtResource("1")]
+position = Vector2(960, 192)
 
 [node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -160,15 +106,11 @@ offset_left = 736.0
 offset_top = 488.0
 offset_right = 1184.0
 offset_bottom = 680.0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+theme = ExtResource("3_l4u3i")
 text = "Restart"
 
 [node name="MenuButton" type="Button" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -177,15 +119,11 @@ offset_left = 736.0
 offset_top = 736.0
 offset_right = 1184.0
 offset_bottom = 928.0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+theme = ExtResource("3_l4u3i")
 text = "Menu"
 
 [node name="Winner" type="Label" parent="."]
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -194,17 +132,20 @@ offset_left = 656.0
 offset_top = 280.0
 offset_right = 1272.0
 offset_bottom = 451.0
-pivot_offset = Vector2( 286, 81 )
-custom_colors/font_color = Color( 1, 0.992157, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+pivot_offset = Vector2(286, 81)
+theme = ExtResource("3_l4u3i")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 100
 text = "ROCK WINS"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Winner"]
 reset_on_save = false
-"anims/New Anim" = SubResource( 2 )
-anims/RESET = SubResource( 3 )
+libraries = {
+"": SubResource("AnimationLibrary_ehw5k")
+}
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

@@ -27,7 +27,7 @@ func check_winner():
 		var win = win_scene.instantiate()
 		var winner_name = Globals.mob_types.keys()[types[0]].to_upper()
 		win.get_node("Winner").text = "%s WINS" % winner_name
-		add_sibling($ColorRect, win)
+		$ColorRect.add_sibling(win)
 		won = true
 
 
