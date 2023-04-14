@@ -71,11 +71,14 @@ func check_collide(collider):
 
 
 func play_sound(sound_name: String):
+	randomize()
 	var hit_audio = AudioStreamPlayer.new()
 	hit_audio.connect(
 		"finished", Callable(get_node("/root/SignalManager"), "_on_Audio_finished").bind(hit_audio)
 	)
 	var stream = load("res://assets/sfx/%s.mp3" % sound_name.to_lower())
+	var random_pitch = randf_range(0.8, 1.2)
+	hit_audio.pitch_scale = random_pitch
 	hit_audio.stream = stream
 	get_node("/root/Main").add_child(hit_audio)
 	hit_audio.play()
