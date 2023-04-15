@@ -4,7 +4,7 @@ var socket: WebSocketPeer = WebSocketPeer.new()
 var connected: bool
 var channel: String
 
-signal chat_message(message, tags)
+signal chat_message(message: String)
 
 
 func _process(_delta: float) -> void:
@@ -30,20 +30,20 @@ func _process(_delta: float) -> void:
 
 func data_received(data: PackedByteArray) -> void:
 	var messages: PackedStringArray = data.get_string_from_utf8().strip_edges(false).split("\r\n")
-	var tags = {}
+	#var tags = {}
 	for message in messages:
 		if message.begins_with("@"):
 			var msg: PackedStringArray = message.split(" ", false, 1)
 			message = msg[1]
-			for tag in msg[0].split(";"):
-				var pair = tag.split("=")
-				tags[pair[0]] = pair[1]
+			#for tag in msg[0].split(";"):
+			#	var pair = tag.split("=")
+				#tags[pair[0]] = pair[1]
 		if OS.is_debug_build():
 			print("> " + message)
-		handle_message(message, tags)
+		handle_message(message)
 
 
-func handle_message(message: String, tags: Dictionary) -> void:
+func handle_message(message: String) -> void:
 	if message == "PING :tmi.twitch.tv":
 		socket.send_text("PONG :tmi.twitch.tv")
 		return
@@ -59,7 +59,7 @@ func handle_message(message: String, tags: Dictionary) -> void:
 		"001":
 			print_debug("Authentication successful.")
 		"PRIVMSG":
-			chat_message.emit(message, tags)
+			chat_message.emit(message)
 
 
 func auth() -> void:
@@ -74,7 +74,7 @@ func auth() -> void:
 
 func _ready() -> void:
 	socket.connect_to_url("wss://irc-ws.chat.twitch.tv:443")
-	self.connect("chat_message", Callable(self, "on_chat"))
+#	self.connect("chat_message", Callable(self, "on_chat"))
 
 
 func on_chat(message, tags) -> void:
