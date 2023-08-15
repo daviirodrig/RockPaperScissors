@@ -2,7 +2,7 @@ extends Area2D
 
 
 func _on_Bolt_body_entered(body):
-	if !("Mob" in body.name):
+	if not body is Mob:
 		return
 
 	self.queue_free()

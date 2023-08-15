@@ -33,7 +33,8 @@ func check_inputs():
 
 
 func check_collide(collider):
-	if !("Mob" in collider.name):
+	if !(collider is Mob):
+		print(collider)
 		return
 
 	if self.type == Globals.mob_types.SCISSORS:
@@ -73,9 +74,10 @@ func check_collide(collider):
 func play_sound(sound_name: String):
 	randomize()
 	var hit_audio = AudioStreamPlayer.new()
-	hit_audio.connect(
-		"finished", Callable(get_node("/root/SignalManager"), "_on_Audio_finished").bind(hit_audio)
-	)
+	hit_audio.finished.connect(func(): hit_audio.queue_free())
+#	hit_audio.connect(
+#		"finished", Callable(get_node("/root/SignalManager"), "_on_Audio_finished").bind(hit_audio)
+#	)
 	var stream = load("res://assets/sfx/%s.mp3" % sound_name.to_lower())
 	var random_pitch = randf_range(0.8, 1.2)
 	hit_audio.pitch_scale = random_pitch
