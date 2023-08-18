@@ -34,7 +34,6 @@ func check_inputs():
 
 func check_collide(collider):
 	if !(collider is Mob):
-		print(collider)
 		return
 
 	if self.type == Globals.mob_types.SCISSORS:

@@ -5,6 +5,7 @@ var connected: bool
 var channel: String
 
 signal chat_message(message: String)
+signal channel_connected(channel: String)
 
 
 func _process(_delta: float) -> void:
@@ -70,6 +71,7 @@ func auth() -> void:
 	socket.send_text("PASS oauth:%s" % token)
 	socket.send_text("NICK " + botname)
 	socket.send_text("JOIN " + ch)
+	emit_signal('channel_connected', ch)
 
 
 func _ready() -> void:

@@ -67,10 +67,10 @@ shape = SubResource("7")
 
 [node name="Nickname" type="Label" parent="."]
 custom_minimum_size = Vector2(230, 30)
-offset_left = -116.333
-offset_top = -43.0
-offset_right = 117.667
-offset_bottom = -11.0
+offset_left = -117.333
+offset_top = -64.0
+offset_right = 116.667
+offset_bottom = -16.0
 theme = ExtResource("3")
 theme_override_font_sizes/font_size = 20
 text = "name"
