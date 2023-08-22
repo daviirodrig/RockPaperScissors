@@ -4,10 +4,12 @@ var win_scene = preload("res://src/main/win/Win.tscn")
 var bolt_scene = preload("res://src/powerups/bolt/Bolt.tscn")
 var ice_scene = preload("res://src/powerups/ice/Ice.tscn")
 var won = false
+var is_twitch = false
 
 
 func _ready():
-	spawn_all_mobs()
+	if not is_twitch:
+		spawn_all_mobs()
 	spawn_powerup(bolt_scene)
 	spawn_powerup(ice_scene)
 

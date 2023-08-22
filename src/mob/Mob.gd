@@ -6,7 +6,7 @@ var speed = 10
 
 
 func _ready():
-	$Nickname.text = self.name
+	%Nickname.text = self.name
 	set_sprite()
 
 
@@ -113,3 +113,7 @@ func load_shader_on_node(node: Node, shader: Shader):
 	var sprite = node.get_node("Area2D/Sprite2D")
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = shader
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	self.queue_free()

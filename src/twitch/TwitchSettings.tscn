@@ -112,4 +112,5 @@ text = "Back"
 icon = ExtResource("3_553to")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/ConnectButton" to="." method="_on_ConnectButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
