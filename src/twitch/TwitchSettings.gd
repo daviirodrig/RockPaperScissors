@@ -27,7 +27,7 @@ func on_message(msg: String):
 	var message = msg.split(":")[-1]
 	#if !message.begins_with("!play"): return
 	var user = msg.split(":")[1].split("!")[0]
-	if user in users: return
+	#if user in users: return
 	users.append(user)
 	n_users = len(users)
 	%Users.text = str(n_users) + " players"
@@ -44,7 +44,7 @@ func _on_start_button_pressed() -> void:
 		var mob = MobScene.instantiate()
 		mob.name = u
 		mob.type = Globals.mob_types.values().pick_random()
-		var screen_size = get_viewport().get_visible_rect().size
+		var screen_size = Vector2(2000,2000)
 		var pos_w = randi() % int(screen_size.x-20)
 		var pos_h = randi() % int(screen_size.y-20)
 		mob.position = Vector2(pos_w, pos_h)

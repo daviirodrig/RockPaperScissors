@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://du1kt8k3yoipv"]
+[gd_scene load_steps=5 format=3 uid="uid://du1kt8k3yoipv"]
 
+[ext_resource type="Script" path="res://src/main/Camera2D.gd" id="2_xrtvg"]
 [ext_resource type="Script" path="res://src/main/Main.gd" id="4"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(1928, 7.93179)
+size = Vector2(20099.4, 16)
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(8, 1088)
+size = Vector2(16, 20024)
 
 [node name="Main" type="Node2D"]
+position = Vector2(-936, -496)
 script = ExtResource("4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1928.0
-offset_bottom = 1088.0
+offset_left = -9072.0
+offset_top = -9512.0
+offset_right = -7152.0
+offset_bottom = -8431.0
+scale = Vector2(10.4248, 18.5221)
 mouse_filter = 2
 color = Color(0.54902, 0.698039, 0.509804, 1)
 metadata/_edit_lock_ = true
@@ -23,18 +28,34 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Botttom" type="CollisionShape2D" parent="Walls"]
-position = Vector2(964, 1084)
+position = Vector2(936, 10504)
 shape = SubResource("1")
+metadata/_edit_lock_ = true
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
-position = Vector2(4, 544)
+position = Vector2(-9072, 492)
 shape = SubResource("2")
+metadata/_edit_lock_ = true
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1924, 544)
+position = Vector2(10944, 500)
 shape = SubResource("2")
+metadata/_edit_lock_ = true
 
 [node name="Top" type="CollisionShape2D" parent="Walls"]
-position = Vector2(964, 4)
+position = Vector2(936, -9512)
 scale = Vector2(0.99585, 1.0086)
 shape = SubResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(968, 536)
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
+limit_smoothed = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("2_xrtvg")
+metadata/_edit_lock_ = true

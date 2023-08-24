@@ -47,11 +47,11 @@ func is_every_element_same(lst: Array) -> bool:
 
 func spawn_all_mobs():
 	for type in Globals.mob_types.values():
-		for _x in range(10):
+		for _x in range(800):
 			randomize()
-			var size = get_viewport().get_visible_rect().size
-			var pos_w = randi() % int(size.x)
-			var pos_h = randi() % int(size.y)
+			var size = Vector2(-10000, -10000) # get_viewport().get_visible_rect().size
+			var pos_w = randi_range(-9000, 10000)#randi() % int(size.x)
+			var pos_h = randi_range(-9000, 10000)#randi() % int(size.y)
 			spawn_one_mob(type, pos_w, pos_h)
 
 
